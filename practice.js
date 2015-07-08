@@ -8,7 +8,7 @@ var me = {
     age: 34
 };
 
-console.log(me.name);
+console.log('name is: ', me.name + '\n');
 
 
 
@@ -40,7 +40,7 @@ favoriteThings.car = 'Nissan';
 favoriteThings.food = 'Pizza';
 favoriteThings.book = 'To Kill a Mockingbird';
 
-console.log(favoriteThings);
+console.log('favorite things object:\n', favoriteThings, '\n');
 
 
 //NEXT PROBLEM
@@ -67,7 +67,7 @@ backpack[item] = 'chapstick';
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-console.log(backpack);
+console.log('backpack output: ', backpack, '\n');
 
 
 
@@ -89,9 +89,9 @@ var me2 = {
 };
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
-
-for (var i in me2) {
-    console.log(me2[i])
+console.log('\nloop to show all keys:');
+for (var key in me2) {
+    console.log(me2[key])
 }
 
 
@@ -113,7 +113,7 @@ var album = {
 
 
 //Now, loop through your album object alerting every song title individually.
-
+console.log('\nloop to show all values:');
 for (var key in album) {
     console.log(key);
 }
@@ -137,7 +137,7 @@ var states = {
 };
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
-
+console.log('\nloop to show only certain values ( > 30000)');
 for (var i in states) {
     if (states[i] > 30000) {
         console.log(i);
@@ -175,7 +175,7 @@ user.name = "Luke";
 user.pwHash = "brown";
 user.username = "Nellas";
 
-console.log(user);
+console.log('\nremove falsey values and replace with truthy values:', user);
 
 
 //NEXT PROBLEM
@@ -191,7 +191,7 @@ var user = {
         birthday: '05/02/1990',
         username: 'tylermcginnis33',
         sayName: function(){
-            console.log('Email is : ' + this.email);
+            console.log('\nEmail is : ' + this.email + '\n');
         }
 };
 //Let's say I, the user, decided to change my name and email address to the following
@@ -221,11 +221,11 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
  which logs 'hello' to the console. */
 
 methodCollection.alertHello = function() {
-    console.log('hello');
+    //alert('hello);  Throws errors in IDE
 };
 
 methodCollection.logHello = function () {
-    console.log('hello')
+    console.log('\nhello\n')
 };
 
 //Now call your alertHello and logHello methods.
@@ -246,9 +246,6 @@ function MakePerson(name, birthday, ssn) {
     this.birthday = birthday;
     this.ssn = ssn;
 }
-
-console.log(new MakePerson('luke', '1/23', 'private'));
-
 
 
 //NEXT PROBLEM
@@ -278,19 +275,19 @@ console.log(new MakePerson('luke', '1/23', 'private'));
 var bindCard = function(constructor1, constructor2) {
     var newObj = {};
     var person = constructor1;
-    var creditcard = constructor2;
+    var creditCard = constructor2;
     for (var key in person) {
         newObj[key] = person[key];
     }
-    for (var attribute in creditcard) {
-        newObj[attribute] = creditcard[attribute];
+    for (var attribute in creditCard) {
+        newObj[attribute] = creditCard[attribute];
     }
     return newObj;
 };
 
 
 
-console.log(bindCard(new MakePerson('luke', '1/23', 'private'), new MakeCard('bob', 'smith', '16 digits', 'some date', '123')));
+console.log('two constructors called and combied into one new object:\n', bindCard(new MakePerson('luke', '1/23', 'private'), new MakeCard('bob', 'smith', '16 digits', 'some date', '123')));
 
 
 
